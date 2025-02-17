@@ -2,11 +2,11 @@
     "name": "admin/web",
     "autoload": {
         "psr-4": {
-            "Admin\\Web\\": "src/"
+            "App\\": "app/"
         }
     },
     "require": {
-        "bramus/router": "~1.6",
+        "bramus/router": "^1.6",
         "vlucas/phpdotenv": "^5.6"
     }
 }
