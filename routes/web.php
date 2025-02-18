@@ -13,15 +13,6 @@ $router->mount('/admins', function () use ($router) {
     $router->get('/', App\Controllers\Admin\DashboardController::class . '@index');
 
 
-    $router->mount('/categories', function () use ($router) {
-
-        $router->get('/', App\Controllers\Admin\CategoriesController::class . '@index');
-        $router->get('/create', App\Controllers\Admin\CategoriesController::class . '@create');
-        $router->post('/store', App\Controllers\Admin\CategoriesController::class . '@store');
-        $router->get('/{id}/edit', App\Controllers\Admin\CategoriesController::class . '@edit');
-        $router->post('/{id}/update', App\Controllers\Admin\CategoriesController::class . '@update');
-        $router->get('/{id}/delete', App\Controllers\Admin\CategoriesController::class . '@delete');
-    });
 });
 
 $router->run();
