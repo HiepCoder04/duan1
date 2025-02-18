@@ -69,8 +69,10 @@ class CategoriesController {
     public function validate($name){
         $messageError = [];
 
-        if (empty($name)) {
-            $messageError['name'] = "Không được để trống tên sản phẩm.";
+
+        if($name == ''){
+            array_push($messageError, 'Không được để trống tên danh mục');
+
         }
        
 
