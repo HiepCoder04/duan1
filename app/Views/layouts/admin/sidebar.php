@@ -25,10 +25,7 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="<?= BASE_URL . 'admins/products'?>">Danh sách sản phẩm</a></li>
-
-                          
                             <li><a href="<?= BASE_URL . 'admins/products/create'?>">Thêm sản phẩm</a></li>
-
                             
                         </ul>
                     </li>
