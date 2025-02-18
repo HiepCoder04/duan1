@@ -13,37 +13,17 @@
 	<meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
 	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Admin Dashboard</title>
 	
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="<?= BASE_URL?>/app/public/admin/assets/images/favicon.png">
     <!-- Custom Stylesheet -->
-	<link href="<?= BASE_URL?>app/public/admin/assets/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="<?= BASE_URL?>/app/public/admin/assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-
-    <!--*******************
-        Preloader start
-    ********************-->
-   <div id="preloader">
-		<div class="lds-ripple">
-			<div></div>
-			<div></div>
-		</div>
-    </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-
-
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
     <div id="main-wrapper">
 
         <!--**********************************

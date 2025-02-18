@@ -3,11 +3,16 @@ use Bramus\Router\Router;
 
 $router=new Router;
 
+$router->get('/',function(){
+    echo'BASE_URL';
+ });
 
-$router->mount('/admins',function() use($router){
+$router->mount('/admin',function() use($router){
+
 
     $router->get('/',App\Controllers\Admin\DashboardController::class.'@index');
     
+
 
     
     //danh muc
@@ -32,3 +37,11 @@ $router->mount('/admins',function() use($router){
         $router->post('/delete',App\Controllers\Admin\ProductController::class.'@delete');
         });
 });
+
+});
+
+
+
+
+$router->run();
+
