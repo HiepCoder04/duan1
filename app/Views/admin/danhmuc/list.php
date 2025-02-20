@@ -6,8 +6,8 @@ require_once 'app/Views/layouts/admin/sidebar.php';
 <div class="content-body">
     <div class="container-fluid">
         <!-- row -->
-        <div class="row">
-            <a href="<?= BASE_URL . 'admins/categories/create' ?>">Thêm mới</a>
+        <div class="row ">
+            <a href="<?= BASE_URL . 'admins/categories/create' ?>" >Thêm mới</a>
             <table class="table">
                 <thead>
                     <tr>

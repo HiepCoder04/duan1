@@ -7,9 +7,7 @@
         public $pdo;
         public function __construct(){
             $host = 'localhost';
-
             $db_name = 'duan_1';
-
             $user = 'root';
             $password = '';
             $port = '3306';

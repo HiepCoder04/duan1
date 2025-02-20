@@ -13,13 +13,18 @@
 	<meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
 	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
 	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="http://localhost/web/css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<!-- PAGE TITLE HERE -->
 	<title>Admin Dashboard</title>
 	
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="<?= BASE_URL?>/app/public/admin/assets/images/favicon.png">
     <!-- Custom Stylesheet -->
+	<link href="<?= BASE_URL?>app/public/admin/assets/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="<?= BASE_URL?>app/public/admin/assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -31,14 +36,9 @@
         ***********************************-->
 		<div class="nav-header">
             <a href="index.html" class="brand-logo">
-				<svg class="logo-abbr" width="55" height="55" viewbox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 0C12.3122 0 0 12.3122 0 27.5C0 42.6878 12.3122 55 27.5 55C42.6878 55 55 42.6878 55 27.5C55 12.3122 42.6878 0 27.5 0ZM28.0092 46H19L19.0001 34.9784L19 27.5803V24.4779C19 14.3752 24.0922 10 35.3733 10V17.5571C29.8894 17.5571 28.0092 19.4663 28.0092 24.4779V27.5803H36V34.9784H28.0092V46Z" fill="url(#paint0_linear)"></path>
-					<defs>
-					</defs>
-				</svg>
 				<div class="brand-title">
-					<h2 class="">Fillow.</h2>
-					<span class="brand-sub-title">Saas Admin Dashboard</span>
+					<h2 class="">Multi Shop</h2>
+					<span class="brand-sub-title">Admin Dashboard</span>
 				</div>
             </a>
             <div class="nav-control">
@@ -743,7 +743,7 @@
 							
 							<li class="nav-item dropdown  header-profile">
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-									<img src="<?= BASE_URL?>/app/public/admin/assets/images/user.jpg" width="56" alt="">
+									<img src="<?= BASE_URL?>/app/public/admin/assets/images/vietnam.webp" width="56" alt="">
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="app-profile.html" class="dropdown-item ai-icon">
