@@ -1,13 +1,13 @@
 <div class="dlabnav">
             <div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
-							<i class="fas fa-home"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-                        
+                <li><a class="" href="<?=BASE_URL?>admins" aria-expanded="false">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
 
-                    </li>
+
+            </li>
 					
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
@@ -29,6 +29,21 @@
                             
                         </ul>
                     </li>
+                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <i class="fab fa-bootstrap"></i>
+                    <span class="nav-text">Quản lí đơn hàng</span>
+                </a>
+                <ul aria-expanded="false">
+                <li><a href="<?=BASE_URL?>admins/order">Xác nhận đơn hàng</a></li>
+                <li><a href="<?=BASE_URL?>admins/order/ship">Chuẩn bị hàng đơn hàng</a></li>
+                <li><a href="<?=BASE_URL?>admins/order/shipnow">Vận chuyển đơn hàng</a></li>
+                    <li><a href="<?=BASE_URL?>admins/order/complate">Đơn hàng đã giao</a></li>
+                    
+                    <li><a href="<?=BASE_URL?>admins/order/fail">Đơn hàng đã hủy</a></li>
+
+
+                </ul>
+            </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
 							<i class="fab fa-bootstrap"></i>
 							<span class="nav-text">Bootstrap</span>
