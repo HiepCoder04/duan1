@@ -12,6 +12,12 @@ $router->get('{id}/prodetail',App\Controllers\Client\HomeController::class.'@pro
 $router->get('shop',App\Controllers\Client\HomeController::class.'@shop');
 $router->post('seach',App\Controllers\Client\HomeController::class.'@search');
 
+//cart
+$router->get('/cart',App\Controllers\Client\CartController::class.'@listCart');
+$router->post('/addcart',App\Controllers\Client\CartController::class.'@addCart');
+$router->get('/cart/remove/{id}',App\Controllers\Client\CartController::class.'@removeCart');
+$router->get('cart/update/{id}/{so_luong_dat}',App\Controllers\Client\CartController::class.'@updateCart');
+
 //authenication
 $router->get('/login', App\Controllers\Auth\AuthController::class . '@loginForm');
 $router->get('/register', App\Controllers\Auth\AuthController::class . '@registerForm');
