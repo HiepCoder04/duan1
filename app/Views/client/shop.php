@@ -65,11 +65,7 @@ require_once 'app/Views/layouts/client/header.php';
                         <div class="product-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="<?= BASE_URL ?>/app/<?= $value->img_thumbnail ?>" alt="">
                             <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href="<?=BASE_URL.$value->id?>/prodetail"><i class="fa fa-search"></i></a>
                             </div>
                         </div>
                         <div class="text-center py-4">
