@@ -2,6 +2,7 @@
 namespace App\Models\Admin;
 
 use App\Commons\Database;
+use PDO;
 
 class Product {
     public $db;
@@ -61,4 +62,27 @@ class Product {
         $query = $this->db->pdo->query($sql);
         return $query;
     }
+    public function listProductbytype($id) {
+        $sql = "SELECT categories.category_name, products.* 
+            FROM products 
+            JOIN categories ON products.category_id = categories.id 
+            WHERE categories.id =$id
+            ORDER BY products.id DESC;
+".$id;
+        $query = $this->db->pdo->query($sql);
+        return $query->fetchAll();
+    }
+    public function searchProducts($keyword) {
+        $sql = "SELECT * FROM products WHERE product_name LIKE $keyword ORDER BY id DESC";
+        $query = $this->db->pdo->query($sql);
+        return $query->fetchAll();
+    }
+    public function reduceStock($product_id, $quantity) {
+        $sql = "UPDATE `products` SET quantity = quantity - :quantity WHERE id = :product_id";
+        $stmt = $this->db->pdo->prepare($sql);
+        $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    
 }

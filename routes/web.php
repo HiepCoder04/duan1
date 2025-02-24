@@ -7,6 +7,11 @@ $router = new Router;
 $router->get('/',App\Controllers\Client\HomeController::class.'@index');
 $router->get('/home',App\Controllers\Client\HomeController::class.'@index');
 
+$router->get('{id}/probytype',App\Controllers\Client\HomeController::class.'@probytype');
+$router->get('{id}/prodetail',App\Controllers\Client\HomeController::class.'@prodetail');
+$router->get('shop',App\Controllers\Client\HomeController::class.'@shop');
+$router->post('seach',App\Controllers\Client\HomeController::class.'@search');
+
 //authenication
 $router->get('/login', App\Controllers\Auth\AuthController::class . '@loginForm');
 $router->get('/register', App\Controllers\Auth\AuthController::class . '@registerForm');
