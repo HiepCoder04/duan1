@@ -59,4 +59,10 @@ class Category {
         $stmt = $this->db->pdo->prepare($sql);
         $stmt->execute(['id' => $id]);
     }
+    public function listcate() {
+        $sql = "SELECT * FROM categories where status=1";
+        $query = $this->db->pdo->query($sql);
+        
+        return $query->fetchAll();
+    }
 }
