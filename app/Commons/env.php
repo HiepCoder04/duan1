@@ -1,3 +1,3 @@
 <?php
 
-    const BASE_URL = "http://localhost/duanmot/";
+    const BASE_URL = "http://localhost/duan1/";
