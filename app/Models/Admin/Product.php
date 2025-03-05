@@ -2,6 +2,7 @@
 namespace App\Models\Admin;
 
 use App\Commons\Database;
+use PDO;
 
 class Product {
     public $db;
@@ -61,4 +62,68 @@ class Product {
         $query = $this->db->pdo->query($sql);
         return $query;
     }
+    public function listProductbytype($id) {
+        $sql = "SELECT categories.category_name, products.* 
+            FROM products 
+            JOIN categories ON products.category_id = categories.id 
+            WHERE categories.id =$id
+            ORDER BY products.id DESC;
+".$id;
+        $query = $this->db->pdo->query($sql);
+        return $query->fetchAll();
+    }
+    public function searchProducts($keyword) {
+        $sql = "SELECT * FROM products WHERE name LIKE :keyword ORDER BY id DESC";
+        $stmt = $this->db->pdo->prepare($sql);
+        $stmt->execute(['keyword' => "%$keyword%"]); 
+        return $stmt->fetchAll();
+    }
+    
+    public function reduceStock($product_id, $quantity) {
+        $sql = "UPDATE `products` SET quantity = quantity - :quantity WHERE id = :product_id";
+        $stmt = $this->db->pdo->prepare($sql);
+        $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    public function addStock($product_id, $quantity) {
+        $sql = "UPDATE `products` SET quantity = quantity + :quantity WHERE id = :product_id";
+        $stmt = $this->db->pdo->prepare($sql);
+        $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    public function listProductWithSale() {
+        $sql = "SELECT categories.category_name, products.* 
+                FROM products 
+                JOIN categories ON products.category_id = categories.id 
+                WHERE products.price_sale IS NOT NULL 
+                  AND products.price_sale > 0
+                ORDER BY products.id DESC";
+    
+        $stmt = $this->db->pdo->query($sql);
+        return $stmt->fetchAll();
+    }
+    public function listTopViewedProducts() {
+        $sql = "SELECT categories.category_name,products.* 
+                FROM products 
+                JOIN categories ON products.category_id = categories.id 
+                ORDER BY products.view DESC 
+                LIMIT 8";
+    
+        $stmt = $this->db->pdo->query($sql);
+        return $stmt->fetchAll();
+    }
+    public function updateView($id) {
+        $sql = "UPDATE products 
+                SET view = view + 1 
+                WHERE id = :id";
+    
+        $stmt = $this->db->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+    
+    
+    
 }

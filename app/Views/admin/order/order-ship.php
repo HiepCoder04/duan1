@@ -9,19 +9,18 @@ require_once 'app/Views/layouts/admin/sidebar.php';
                 <!-- row -->
               <div class="row">
               <div class="row mb-5">
-                <div class="col-sm-3">
-                    <a href="<?=BASE_URL?>admins/order" class="btn btn-primary">Đơn hàng chờ xác nhận</a>
+                <div class="col-sm-4">
+                    
+                    <select class="form-control" id="orderStatusSelect">
+                        <option value="<?= BASE_URL ?>admins/order/ful">Tất cả</option>
+                        <option value="<?= BASE_URL ?>admins/order/complate">Đơn hàng thành công (<?=$countComplate?>)</option>
+                        <option value="<?= BASE_URL ?>admins/order">Đơn hàng chờ xác nhận (<?=$countoder?>)</option>
+                        <option value="<?= BASE_URL ?>admins/order/ship">Đơn hàng đang chuẩn bị (<?=$countPending?>)</option>
+                        <option value="<?= BASE_URL ?>admins/order/shipnow">Đơn hàng đang vận chuyển (<?=$countShip?>)</option>
+                        <option value="<?= BASE_URL ?>admins/order/fail">Đơn hàng đã hủy (<?=$countfail?>)</option>
+                    </select>
                 </div>
-                <div class="col-sm-3">
-                    <a href="<?=BASE_URL?>admins/order/complate" class="btn btn-primary">Đơn hàng thành công</a>
-                </div>
-                <div class="col-sm-3">
-                    <a href="<?=BASE_URL?>admins/order/shipnow" class="btn btn-primary">Đơn hàng đang vận chuyển</a>
-                </div>
-                <div class="col-sm-3">
-                    <a href="<?=BASE_URL?>admins/order/fail" class="btn btn-primary">Đơn hàng chờ đã hủy</a>
-                </div>
-              </div>
+            </div>
                      <table class="table">
                      <h3 class="mt-3 mb-5">Đơn hàng đang chuẩn bị:</h3>
         <thead>
@@ -81,7 +80,16 @@ require_once 'app/Views/layouts/admin/sidebar.php';
               </div>
             </div>
         </div>
-
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("orderStatusSelect").addEventListener("change", function () {
+        let selectedUrl = this.value;
+        if (selectedUrl) {
+            window.location.href = selectedUrl; // Chuyển hướng trang
+        }
+    });
+});
+</script>
 
  <?php
 require_once 'app/Views/layouts/admin/footer.php';

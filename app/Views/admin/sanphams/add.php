@@ -6,10 +6,7 @@ require_once 'app/Views/layouts/admin/sidebar.php';
 <div class="content-body">
     <div class="container-fluid">
         <div class="row">
-            <?php if (isset($_SESSION['success'])): ?>
-                <div class="alert alert-success"><?= $_SESSION['success'] ?></div>
-                <?php unset($_SESSION['success']); ?>
-            <?php endif; ?>
+        
 
             <form action="<?= BASE_URL . 'admins/products/store' ?>" method="post" style="width: 70%;" enctype="multipart/form-data">
                 <div class="a">

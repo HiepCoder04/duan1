@@ -16,7 +16,7 @@ class Category {
         return $query->fetchAll();
     }
 
-    // Thêm danh mục
+    // Thêm danh mục    
     public function addCate($name, $status) {
         $now = date("Y-m-d H:i:s");
         $sql = "INSERT INTO categories (category_name, status, created_at, updated_at) 
@@ -58,5 +58,11 @@ class Category {
         $sql = "DELETE FROM categories WHERE id = :id";
         $stmt = $this->db->pdo->prepare($sql);
         $stmt->execute(['id' => $id]);
+    }
+    public function listcate() {
+        $sql = "SELECT * FROM categories where status=1";
+        $query = $this->db->pdo->query($sql);
+        
+        return $query->fetchAll();
     }
 }

@@ -2,10 +2,7 @@
 require_once 'app/Views/layouts/admin/header.php';
 require_once 'app/Views/layouts/admin/sidebar.php';
 ?>
-<?php if (isset($_SESSION['success'])): ?>
-    <div class="alert alert-success"><?= $_SESSION['success'] ?></div>
-    <?php unset($_SESSION['success']); ?>
-<?php endif; ?>
+
 
 <div class="content-body">
     <div class="container-fluid">

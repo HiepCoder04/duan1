@@ -3,14 +3,19 @@
 namespace App\Controllers\Admin;
 use App\Models\Admin\Category;
 use App\Models\Admin\Product;
+use App\Midderware\Midderware;
 
 class ProductController {
     public $cate;
     public $products;
+    public $midderlware;
 
     public function __construct() {
+        $this-> midderlware = new Midderware;
+        $this-> midderlware->checkadmin();
         $this->cate = new Category();
         $this->products = new Product();
+        
     }
 
     public function index() {
@@ -48,7 +53,7 @@ class ProductController {
 
             if (empty($messageError)) {
                 $this->products->addProduct($data['name'], $data['category_id'], $data['product_code'], $linkImage, $data['quantity'], $data['description'], $data['content'], $data['status'], $data['price'], $data['price_sale']);
-                $_SESSION['success'] = "Thêm sản phẩm thành công!";
+                $_SESSION['message_success'] = "Thêm sản phẩm thành công!";
                 header('Location: ' . BASE_URL . '/admins/products');
                 exit();
             }
@@ -118,7 +123,7 @@ class ProductController {
                     // Cập nhật sản phẩm vào database
                     $this->products->updateProduct($id, $data['name'], $data['category_id'], $data['product_code'], $linkImage, $data['quantity'], $data['description'], $data['content'], $data['status'], $data['price'], $data['price_sale'],$now);
         
-                    $_SESSION['success'] = "Cập nhật sản phẩm thành công!";
+                    $_SESSION['message_success'] = "Cập nhật sản phẩm thành công!";
                     header('Location: ' . BASE_URL . '/admins/products');
                     exit();
                 }
@@ -150,7 +155,7 @@ class ProductController {
         // Xóa sản phẩm trong database
         $this->products->deleteProduct($id);
     
-        $_SESSION['success'] = "Xóa sản phẩm thành công!";
+        $_SESSION['message_success'] = "Xóa sản phẩm thành công!";
         header('Location: ' . BASE_URL . '/admins/products');
         exit();
     }
