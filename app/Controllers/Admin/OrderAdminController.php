@@ -48,7 +48,7 @@ class OrderAdminController{
         // Kiểm tra nếu đơn hàng không tồn tại
         if (empty($orderDetails)) {
             $_SESSION['message_error'] = "Không tìm thấy đơn hàng.";
-            header("Location: " . BASE_URL . "admins/order");
+            header("Location: " . BASE_URL . "admins/order/ful");
             exit();
         }
     
@@ -95,7 +95,7 @@ class OrderAdminController{
                
             
             $_SESSION['message_success'] = " Đơn hàng đã được xác nhận!";
-            header('Location: ' . BASE_URL . 'admins/order/');
+            header('Location: ' . BASE_URL . 'admins/order/ful');
             exit();
            
           
@@ -137,7 +137,7 @@ class OrderAdminController{
              
           
           $_SESSION['message_success'] = " Đơn hàng được chuyển qua đơn vị vận chuyển!";
-          header('Location: ' . BASE_URL . 'admins/order/ship');
+          header('Location: ' . BASE_URL . 'admins/order/ful');
           exit();
          
         
@@ -155,7 +155,7 @@ class OrderAdminController{
            
         
         $_SESSION['message_success'] = " Đơn hàng đã được giao thành công!";
-        header('Location: ' . BASE_URL . 'admins/order/shipnow');
+        header('Location: ' . BASE_URL . 'admins/order/ful');
         exit();
        
       
